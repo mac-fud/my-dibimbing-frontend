@@ -1,7 +1,10 @@
+const express = require("express"); 
+const { stringify } = require("querystring");
 const port = process.env.PORT || 3000;
+const app = express();
 
-app.listen(port, () => {
- console.log(`Server listening at http://localhost:${port}`);
+app.get("/avengers", (req, res) =>{
+    res.json(avengers)
 });
 
 let avengers = [{
@@ -60,3 +63,7 @@ for (a of avengers) {
 }
 
 console.log(JSON.stringify(avengers))
+
+app.listen(port, () => {
+    console.log(`Server listening at http://localhost:${port}`);
+   });
